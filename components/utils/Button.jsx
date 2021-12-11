@@ -1,4 +1,4 @@
-export default function Button({ customStyles, disabled = false, onClick, icon, text }) {
+export default function Button({ customStyles, disabled = false, onClick, icon, text, children }) {
   return (
     <button
       className={`button-component ${disabled && 'disabled'}`}
@@ -7,7 +7,7 @@ export default function Button({ customStyles, disabled = false, onClick, icon, 
       style={customStyles}
     >
       {icon && <span className="material-icons pad-5-r">{icon}</span>}
-      {text}
+      {children || text}
     </button>
   );
 }
